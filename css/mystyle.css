@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,body{
+	font-family: 'roboto';
+	font-size: 16px;
+}
+.theh{
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	margin: auto;
+	co
+}
+.navbar{background-color: black}
+.navbar li a{color: black}
+.card ul li{list-style-type: none}
+
+.shopping-mall{
+	position: absolute;
+	font-variant: small-caps;
+}
+.shopping-mall>h1{
+	font-family: Impact;
+	color: white;
+	letter-spacing: 0.3px;
+	text-shadow: 0 0 2px black;
+	padding-bottom: 0px;
+	border-bottom: 1px dotted gray;
+	margin: 0px;
+}
+.shopping-mall>h5{
+	margin-top: 5px;
+	font-size: 15px;
+}
+.bg-mauvangbai1{
+	background-color: #f9fad2;
+}
+.bg-mauxambai2{
+	background-color: #f4f4f4;
+}
+
+
+.containerr {
+ 	width: 1000px;
+	margin: 0 auto;
+}
+.topweb{
+	height: 30px;
+	border: 1px solid #BFBFBF;
+}
+.bg-menunho{
+	height: 25px;
+	background-color: #04a59d;
+	line-height: 25px;
+}
+.bg-menunho a{
+	color: #FFFFFF;
+}
+#main_menu a{
+	color: black;
+}
+
+
+
+
+
+
+
+
+

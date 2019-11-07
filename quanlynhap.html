@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from demo.harnishdesign.net/html/bigshop/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2015 08:26:20 GMT -->
+<head>
+	<meta charset="UTF-8" />
+	<title>Quản lý nhập hàng</title>
+	<link href="image/favicon.png" rel="icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- CSS Part Start-->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/mystyle.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="css/slideshow.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/colorbox.html" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/carousel.css" media="screen" />
+	<!-- CSS Part End-->
+	<!-- JS Part Start-->
+	<script src="js/angular.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/colorbox/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="js/tabs.js"></script>
+	<script type="text/javascript" src="js/jquery.easing-1.3.min.js"></script>
+	<script type="text/javascript" src="js/cloud_zoom.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/jquery.dcjqaccordion.js"></script>
+	<!-- JS Part End-->
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		<div class="main-wrapper">
+			<!-- bắt đầu phần header-->
+			<div id="header">
+				<div id="welcome">
+					<div class="links">Giỏ hàng của tôi
+						<ul>
+							<li><a href="cart.html">Giỏ hàng</a></li>
+							<li><a href="checkout.html">Kiểm tra giỏ hàng</a></li>
+						</ul>
+					</div>
+					<a href="login.html">Đăng Nhập</a> <a href="register.html">Tạo tài khoản mới</a> </div>
+					<div id="logo"><a href="index.html"><img src="image/logosn.png" title="ecommerce Html Template" alt="ecommerce Html Template" /></a></div>
+					<div id="search">
+						<div class="button-search"></div>
+						<input type="text" value="" placeholder="" id="filter_name" name="search">
+					</div>
+					<!--giỏ hàng thu nhỏ-->
+					<div id="cart">
+						<div class="heading">
+							<h4><img width="32" height="32" alt="small-cart-icon" src="image/cart-bg.png"></h4>
+							<a><span id="cart-total">Giỏ hàng di động</span></a></div>
+							<div class="content">
+								<div class="mini-cart-info">
+									<table>
+										<tbody>
+<!--
+											<tr ng-repeat = "cart in carts" ng-init = "setTotals(cart)">
+												<td class="image"><a href="product.html"><img title="Chair Swing" alt="Chair Swing" width="43" height="43" src="image/product/{{cart.hinhsp}}"></a></td>
+												<td class="name"><a href="product.html">{{cart.tensp}}</a></td>
+												<td class="quantity">x&nbsp;1</td>
+												<td class="total">{{cart.giasp}}VND</td>
+												<td class="remove" ng-click = "remove_cart(cart)"><img title="Remove" alt="Remove" src="image/remove-small.png"></td>
+											</tr>
+-->
+											
+										</tbody>
+									</table>
+								</div>
+								<div class="mt-2 mb-2" style="color: red">Tổng Tiền: {{total}} VNĐ</div>
+								<div class="checkout">
+									<a href="cart.html" class="button">View Cart</a> &nbsp; <a href="checkout.html" class="button">Checkout</a></div>
+								</div>
+							</div>
+							<!--kết thúc giỏ hàng mini-->
+						</div>
+						<!--menu trên-->
+						<div id="menu"><span>Menu</span>
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<a class="home"  title="Trang chủ" href="index.html"><span>Trang chủ</span></a>
+								</li>
+								<li class="nav-item dropdown"> <a href="category.html">Điện thoại</a>
+									<div>
+										<ul>
+											<li><a href="category.html">Apple</a></li>
+											<li><a href="#">SamSung</a></li>
+											<li><a href="#">Xiaomi</a></li>
+											<li><a href="quanlynhap.html">Quản lý nhập</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="nav-item dropdown"> <a href="#">Phụ kiện </a>
+									<div>
+										<ul>
+											<li><a href="#">Kính cường lực</a></li>
+											<li><a href="#">Xạc dự phòng</a></li>
+											<li><a href="#">Tai nghe</a></li>
+											<li><a href="#">Ốp lưng</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="nav-item dropdown"><a href="#">Sim số đẹp</a>
+									<div>
+										<ul>
+											<li><a href="#">Sim Viettel</a></li>
+											<li><a href="#">Sim Mobiphone</a></li>
+											<li><a href="#">Sim Vietnamobile</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="nav-item dropdown"><a href="#">Giới thiệu</a>
+									
+								</li>
+								<li class="nav-item dropdown"><a href="lienhe.html">Thông tin liên hệ</a>
+								</li>
+							</ul>
+						</div>
+						<!--menu trái-->
+						<div class="container-fluid">
+							<div class="breadcrumb"> <a href="index.html">Trang chủ</a> » <a href="quanlynhap.html">Quản lý nhập hàng</a></div>
+							<div class="bidelen row container mt-4">
+								<div class="theh">
+									<h3 ><center>QUẢN LÝ SẢN PHẨM</center></h3>
+								</div>
+								<br>
+								
+								<!-- Secsion -->
+								<div class="col-12 col-sm-12 col-md-12 mt-4">
+									<form>
+										<div class="form-group">
+											<label for="ma"><strong>Mã Sản Phẩm: </strong></label>
+											<input class="form-control" type="text" ng-model="ma" id="ma" title="Vui lòng nhập tên sản phẩm!">
+											
+										</div>
+										<div class="form-group">
+											<label for="ten"><strong>Tên Sản Phẩm: </strong></label>
+											<input class="form-control" type="text" ng-model="tensp" id="ten" title="Vui lòng nhập tên sản phẩm!">
+										</div>
+										<div class="form-group">
+											<label for="gianhap"><strong>Giá Nhập: </strong></label>
+											<input class="form-control" type="text" ng-model="gianhapsp" id="gianhap" title="Vui lòng nhập giá nhập!">
+										</div>
+										<div class="form-group">
+											<label for="giaban"><strong>Giá Bán: </strong></label>
+											<input class="form-control" type="text" ng-model="giabansp" id="giaban" title="Vui lòng nhập giá bán!">
+										</div>
+										<div class="form-group">
+											<label for="ngaynhapsp"><strong>Ngày Nhập Sản Phẩm: </strong></label>
+											<input class="form-control" type="date" ng-model="ngaynhapsp" id="ngaynhapsp" title="Vui lòng nhập ngày !">
+										</div>
+										<div class="form-group">
+											<label for="nhasanxuat"><strong>Nhà cung cấp: </strong></label>
+											<input class="form-control" type="text" ng-model="nhasanxuatsp" id="nhasanxuat" title="Vui lòng nhập nhà cung cấp!">
+										</div>
+										<div class="form-group mt-3 mb-4">
+											<button class="btn btn-info"  ng-click="luusp()">Thêm</button>
+											<button class="btn btn-warning" ng-click="doEdit()">Sửa</button>
+											<button class="btn btn-danger" ng-click="moisp()">Hủy</button>
+											<input class="bg-bogoctimkiem float-right " ng-model="hihiSearch" placeholder="Tìm kiếm sản phẩm...">
+										</div>
+									</form>
+									
+									
+									<table class="table">
+										<tr>
+											<th>STT</th>
+											<th ng-click="orderByMe('ma')">Mã sản phẩm</th>
+											<th ng-click="orderByMe('ten')">Tên</th>
+											<th ng-click="orderByMe('gianhap')">Giá nhập</th>
+											<th ng-click="orderByMe('giaban')">Giá bán</th>
+											<th ng-click="orderByMe('ngaynhap')">Ngày nhập</th>
+											<th ng-click="orderByMe('nhasanxuat')">Nhà sản xuất</th>
+											<th></th>
+										</tr>
+										<tr ng-repeat="sp in listsp | filter:hihiSearch | orderBy:myOrderBy">
+											<td>{{$index + 1}}</td>
+											<td>{{sp.ma}}</td>
+											<td>{{sp.ten}}</td>
+											<td>{{sp.gianhap}}</td>
+											<td>{{sp.giaban}}</td>
+											<td>{{sp.ngaynhap}}</td>
+											<td>{{sp.nhasanxuat}}</td>
+											<td><a href="#" ng-click="suasp($index)" style="color: blue">SỬA </a>|
+												<a href="#" ng-click="xoasp($index)" style="color: red">XÓA </a></td>
+											</tr>
+										</table>
+									</div>
+									
+									
+									
+									
+									
+									<!-- Footer -->
+									<div id="footer">
+										<div class="column">
+											<h3>Thông tin liên hệ</h3>
+											<ul>
+												<li><a href="gioithieu.html">Giới thiệu về công ty</a></li>
+												<li><a href="#">Chính sách giao hàng</a></li>
+												<li><a href="#">Chính sách bảo mật</a></li>
+											</ul>
+										</div>
+										<div class="column">
+											<h3>Hỗ trợ khách hàng</h3>
+											<ul>
+												<li><a href="#">Chính sách đổi trả</a></li>
+												<li><a href="#">Hỗ trợ online</a></li>
+												<li><a href="#">Chính sách trả góp</a></li>
+												<li><a href="lienhe.html">Khiếu nại</a></li>
+											</ul>
+										</div>
+										<div class="column">
+										</div>
+										<div class="column">
+										</div>
+										<div class="contact">
+											<ul>
+												<li class="address">31 Y Ngông, TP.Buôn Ma Thuật</li>
+												<li class="mobile">077 249 6169</li>
+												<li class="email"><a href="mailto:sanhnbpk00900@fpt.edu.vn">sanhnbpk00900@fpt.edu.vn</a></li>
+												<li class="mobile">0702 441 6169</li>
+											</ul>
+										</div>
+										<div class="social"> <a href="https://www.facebook.com/sanhnb2111" target="_blank"><img src="image/facebook.png" alt="Facebook" 		title="Facebook"></a> 
+											<a href="https://twitter.com/#!/#" target="_blank"><img src="image/twitter.png" alt="Twitter" title="Twitter"></a>
+											<a href="https://plus.google.com/u/0/#" target="_blank"><img src="image/googleplus.png" alt="Google+" title="Google+"></a>
+											<a href="http://pinterest.com/#" target="_blank"><img src="image/pinterest.png" alt="Pinterest" title="Pinterest"></a>
+											<a href="#" target="_blank"><img src="image/rss.png" alt="RSS" title="RSS"></a> <a href="http://www.vimeo.com/#" target="_blank"><img src="image/vimeo.png" alt="Vimeo" title="Vimeo"></a> 
+											<a href="http://www.flickr.com/photos/#" target="_blank"><img src="image/flickr.png" alt="flickr" title="Flickr"></a>
+											<a href="http://www.youtube.com/#" target="_blank"><img src="image/youtube.png" alt="YouTube" title="YouTube"></a> 
+											<a href="skype:#?call" target="_blank"><img src="image/skype.png" alt="skype" title="Skype"></a>
+											<a href="#" target="_blank"><img src="image/blogger.png" alt="Blogger" title="Blogger"></a>
+										</div>
+										<div class="clear"></div>
+										<div id="powered"><a href="#">SanhNB </a> &copy; 2019 &nbsp;|&nbsp; Bản quyền thuộc về <a target="_blank" href="https://www.facebook.com/sanhnb2111">SanhNB</a>
+											<div class="payments_types"> <img src="image/payment_paypal.png" alt="paypal" title="PayPal"> <img src="image/payment_american.png" alt="american-express" title="American Express"> <img src="image/payment_2checkout.png" alt="2checkout" title="2checkout"> <img src="image/payment_maestro.png" alt="maestro" title="Maestro"> <img src="image/payment_discover.png" alt="discover" title="Discover"> <img src="image/payment_mastercard.png" alt="mastercard" title="MasterCard"> <img src="image/payment_visa.png" alt="visa" title="Visa"> <img src="image/payment_sagepay.png" alt="sagepay" title="sagepay"> <img src="image/payment_moneybookers.png" alt="moneybookers" title="Moneybookers"> </div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<script>
+							var app = angular.module("myApp", []);
+							app.controller("myController", function($scope){
+								
+								$scope.listsp = [
+								{
+									ma: "AD124",
+									ten: "Iphone X 128 GB",
+									gianhap: "14.500.000đ",
+									giaban: "16.990.000đ",
+									ngaynhap: "20/04/2019",
+									nhasanxuat: "Hoàng Hà Mobile"
+								},
+								{
+									ma: "SA121",
+									ten: "Iphone 8 Plus 64GB",
+									gianhap: "10.000.000đ",
+									giaban: "13.990.000đ",
+									ngaynhap: "20/04/2019",
+									nhasanxuat: "Hoàng Hà Mobile"
+								},
+								{
+									ma: "AS154",
+									ten: "Iphone 7Plus 128GB",
+									gianhap: "5.000.000đ",
+									giaban: "7.990.000đ",
+									ngaynhap: "22/04/2019",
+									nhasanxuat: "Hoàng Hà Mobile"
+								},
+								{
+									ma: "AA125",
+									ten: "Iphone 6S Plus",
+									gianhap: "2.500.000đ",
+									giaban: "4.540.000đ",
+									ngaynhap: "22/04/2019",
+									nhasanxuat: "Hoàng Hà Mobile"
+								},
+								{
+									ma: "AV147",
+									ten: "Samsung Galaxy S10",
+									gianhap: "20.500.000đ",
+									giaban: "24.990.000đ",
+									ngaynhap: "17/03/2019",
+									nhasanxuat: "Samsung Việt Nam"
+								},
+								{
+									ma: "AW111",
+									ten: "Samsung Galaxy A8",
+									gianhap: "6.000.000đ",
+									giaban: "7.490.000đ",
+									ngaynhap: "19/04/2019",
+									nhasanxuat: "Samsung việt Nam"
+								},
+								{
+									ma: "AG445",
+									ten: "Xiaomi Note 7",
+									gianhap: "3.100.000đ",
+									giaban: "4.590.000đ",
+									ngaynhap: "28/03/2019",
+									nhasanxuat: "Xiaomi Việt Nam"
+								},
+								{
+									ma: "AL442",
+									ten:"Xiaomi MI8",
+									gianhap: "9.200.000đ",
+									giaban: "11.490.000đ",
+									ngaynhap: "12/04/2019",
+									nhasanxuat: "Xiaomi Việt Nam"
+								}]
+								
+								$scope.luusp = function(){
+									$scope.listsp.push({
+										ma:$scope.ma,
+										ten:$scope.tensp,
+										gianhap:$scope.gianhapsp,
+										giaban:$scope.giabansp,
+										ngaynhap:$scope.ngaynhapsp,
+										nhasanxuat:$scope.nhasanxuatsp
+									});
+								}
+								
+								$scope.xoasp = function(index){
+									$scope.listsp.splice(index, 1);
+								}
+								
+								$scope.suasp = function(index){
+									$scope.nidex = index;
+									$scope.ma = $scope.listsp[index].ma; 
+									$scope.tensp = $scope.listsp[index].ten; 
+									$scope.gianhapsp = $scope.listsp[index].gianhap;
+									$scope.giabansp = $scope.listsp[index].giaban;
+									$scope.ngaynhapsp = $scope.listsp[index].ngaynhap;
+									$scope.nhasanxuatsp = $scope.listsp[index].nhasanxuat;
+								}
+								
+								$scope.doEdit = function(){
+									$scope.listsp[$scope.nidex].ma = $scope.ma;
+									$scope.listsp[$scope.nidex].ten = $scope.tensp;
+									$scope.listsp[$scope.nidex].gianhap = $scope.gianhapsp;
+									$scope.listsp[$scope.nidex].giaban = $scope.giabansp;
+									$scope.listsp[$scope.nidex].ngaynhap = $scope.ngaynhapsp;
+									$scope.listsp[$scope.nidex].nhasanxuat = $scope.nhasanxuatsp;
+								}
+								
+								$scope.moisp = function(){
+									$scope.ma = "";
+									$scope.tensp = "";
+									$scope.gianhapsp = "";
+									$scope.giabansp = "";
+									$scope.ngaynhapsp = "";
+									$scope.nhasanxuatsp = "";
+								}
+								
+								$scope.orderByMe = function(tc) {
+									$scope.myOrderBy = tc;
+								}
+							});
+							
+						</script>
+					</div>
+				</body>
+
+				<!-- Mirrored from demo.harnishdesign.net/html/bigshop/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Aug 2015 08:26:22 GMT -->
+				</html>
